@@ -110,7 +110,7 @@ public class Array<E> {
      * @return
      */
     public boolean isEmpty() {
-        return data.length == 0;
+        return size == 0;
     }
 
     /**
@@ -154,7 +154,7 @@ public class Array<E> {
      * @return
      */
     public E removeLast() {
-        return remove(size);
+        return remove(size - 1);
     }
 
     /**
