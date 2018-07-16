@@ -201,7 +201,7 @@ public class LinkedList<E> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("current LinkedList: ");
+        final StringBuilder sb = new StringBuilder();
         for (Node c = dumyHead.next; c != null; c = c.next)
             sb.append(c.elem).append("->");
         sb.append("NULL");
