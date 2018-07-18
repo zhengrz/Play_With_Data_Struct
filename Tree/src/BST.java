@@ -10,9 +10,9 @@ public class BST< E extends Comparable > {
 
     private class Node {
 
-        private E v;
-        private Node left;
-        private Node right;
+        private E v;            // 节点元素值
+        private Node left;      // 左子节点
+        private Node right;     // 右子节点
 
         public Node(E v) {
             this.v = v;
@@ -22,18 +22,39 @@ public class BST< E extends Comparable > {
     }
 
     private int size;
-    private Node root;
+    private Node root;  // 根节点
 
+    /**
+     * 获取二叉树元素数量
+     * @return
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * 判断二叉树是否为空
+     * @return
+     */
     public boolean isEmpty() {
         return size == 0;
     }
 
-    public void add (E e) {
-        root = add(root, e);
+    /**
+     * 判断某个元素是否存在二叉树
+     * @param e
+     * @return
+     */
+    public boolean contains(E e) {
+        return contains(root, e);
+    }
+
+    private boolean contains(Node node, E e) {
+        if (node == null) return false;
+        if (e.compareTo(node.v) == 0) return true;
+        else if (e.compareTo(node.v) < 0) return contains(node.left, e);
+        // e.compareTo(node.v) > 0
+        else return contains(node.right, e);
     }
 
     /**
@@ -53,6 +74,10 @@ public class BST< E extends Comparable > {
             node.right = add(node.right, e);
         }
         return node;
+    }
+
+    public void add (E e) {
+        root = add(root, e);
     }
 
     /**
@@ -128,7 +153,10 @@ public class BST< E extends Comparable > {
         return node;
     }
 
-
+    /**
+     * 删除任意位置的元素
+     * @param e
+     */
     public void remove(E e) {
         root = remove(root, e);
     }
