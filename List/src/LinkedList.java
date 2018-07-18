@@ -31,6 +31,10 @@ public class LinkedList<E> {
         }
     }
 
+    public Node getHead() {
+        return dumyHead.next;
+    }
+
     public LinkedList() {
         this.dumyHead = new Node(null, null);
         this.size = 0;
