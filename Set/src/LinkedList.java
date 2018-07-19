@@ -136,6 +136,7 @@ public class LinkedList<E> {
 
     /**
      * 查找链表中是否有元素e
+     * 复杂度: O(n)
      * @param e
      * @return
      */

@@ -44,6 +44,7 @@ public class BST< E extends Comparable > {
 
     /**
      * 添加二叉树节点
+     * 复杂度: O(logN)
      * @param node
      * @param e
      * @return
