@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * 动态数组
  * 复杂度评估使用: 均摊复杂度评估
@@ -19,6 +17,12 @@ public class Array<E> {
     // 构造函数，传入数组的容量capacity构造Array
     public Array(int capacity) {
         data = (E[]) new Object[capacity];
+    }
+
+    public Array(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        for( int i = 0; i < arr.length; i++ ) data[i] = arr[i];
+        size = data.length;
     }
 
     /**
@@ -90,7 +94,7 @@ public class Array<E> {
     }
 
     public E getFirst() {
-        return get(0);
+        return data[0];
     }
 
     /**
@@ -177,6 +181,13 @@ public class Array<E> {
         if (index < 0 || index > size)
             throw new ArrayIndexOutOfBoundsException("Remove failed. Required index >= 0 and index <= size.");
         data[index] = e;
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) throw new IllegalArgumentException("index is illegal");
+        E tmp = data[i];
+        data[i] = data[j];
+        data[j] = tmp;
     }
 
     @Override
