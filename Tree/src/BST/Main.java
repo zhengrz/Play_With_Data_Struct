@@ -1,11 +1,10 @@
-import java.util.LinkedList;
-import java.util.Random;
+package BST;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        BST<Integer> bst = new BST<>();
+        BST<Integer> bst = new BST<Integer>();
 
         int[] nums = new int[] { 5, 3, 2, 8, 6, 9, 4 };
 

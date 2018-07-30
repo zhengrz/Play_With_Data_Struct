@@ -1,13 +1,14 @@
+package BST;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
 /**
  * @author zhengrz
- * @date 2018/7/17 18:22
+ * @date 2018/7/28 10:38
  */
 public class BST< E extends Comparable > {
-
     private class Node {
 
         private E v;            // 节点元素值
@@ -53,7 +54,7 @@ public class BST< E extends Comparable > {
         if (node == null) return false;
         if (e.compareTo(node.v) == 0) return true;
         else if (e.compareTo(node.v) < 0) return contains(node.left, e);
-        // e.compareTo(node.v) > 0
+            // e.compareTo(node.v) > 0
         else return contains(node.right, e);
     }
 
